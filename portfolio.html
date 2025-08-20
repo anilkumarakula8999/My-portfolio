@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anil Kumar AS | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {  
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      scroll-behavior: smooth;
+      background: #f0f2f5;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background: linear-gradient(180deg, #2c3e50, #3498db);
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      text-align: center;
+      padding-top: 20px;
+      transition: all 0.3s ease;
+    }
+    .sidebar img {
+      width: 180px;
+      height: 200px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      border: 4px solid white;
+      object-fit: cover;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .sidebar img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+    .sidebar h2 {
+      margin: 10px 0;
+      font-size: 24px;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+    .sidebar a {
+      display: block;
+      padding: 12px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      margin: 5px 10px;
+    }
+    .sidebar a:hover {
+      background: #1abc9c;
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    /* Main Content */
+    .main {
+      margin-left: 250px;
+      padding: 20px;
+      flex: 1;
+    }
+    section {
+      padding: 40px 30px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      background: linear-gradient(120deg, #ffffff, #e0f7fa);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      color: #34495e;
+      border-bottom: 3px solid #1abc9c;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
+
+    /* Skills */
+    .skill-bar {
+      margin: 10px 0;
+      background: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 20px;
+    }
+    .skill-fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #1abc9c, #3498db);
+      text-align: right;
+      padding-right: 10px;
+      color: white;
+      font-weight: bold;
+      line-height: 20px;
+      border-radius: 20px;
+      transition: width 1.5s ease-in-out;
+    }
+
+    /* Certifications */
+    .certifications img {
+      width: 250px;
+      margin: 10px;
+      border: 2px solid #ddd;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .certifications img:hover {
+      transform: scale(1.1) rotate(3deg);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+
+    /* Contact buttons */
+    .contact-btn {
+      display: inline-block;
+      margin: 5px 10px;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(45deg, #1abc9c, #3498db);
+      transition: all 0.3s ease;
+    }
+    .contact-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #2c3e50;
+      color: white;
+      margin-top: 20px;
+      border-radius: 12px 12px 0 0;
+      box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Back to Top Button */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #1abc9c;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+    #backToTop:hover {
+      transform: scale(1.2);
+      background: #16a085;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+      .main {
+        margin-left: 0;
+      }
+      .sidebar img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="my-photo.jpeg" alt="Anil Kumar">
+    <h2>Anil Kumar</h2>
+    <a href="#about">About Me</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <!-- About Me -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Working as an Associate Software Engineer. With hands-on expertise in AWS cloud, CI/CD automation, and DevOps practices, I am passionate about building scalable, secure, and automated cloud solutions.</p>
+      <p>In my current role at Sensorise Smart Solutions Pvt. Ltd. I designed and implemented a serverless AWS CI/CD pipeline using Lambda, S3, SNS, and EC2, automating SIM data generation workflows. I built Lambda functions to validate ICCID ranges, product codes, and quantities, ensuring data accuracy and reliability. I also integrated SNS alerts for real-time job status notifications and automated deployments through GitHub Actions CI/CD.</p>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul>
+        <li><b>Associate Software Engineer</b> | Sensorise Smart Solutions Pvt. Ltd. | Jan 2025 – Present</li>
+      </ul>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li>
+          <strong>Global Mobility Systems</strong>
+          <ul>
+            <li>Built a serverless AWS CI/CD pipeline (Lambda, S3, SNS, EC2) for SIM data automation</li>
+            <li>Created Lambdas to validate ICCID ranges, product codes, quantities, and IMSI</li>
+            <li>Automated SIM generation on EC2 and stored outputs in S3</li>
+            <li>Configured SNS alerts for job status notifications</li>
+            <li>Managed secrets with Secrets Manager and deployed via GitHub Actions CI/CD</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ✅ Education -->
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li><b>B.Tech in Mechanical Engineering</b> | Chadalawada Ramannama Engineering College | 2022</li>
+      </ul>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Skills</h2>
+       <ul>
+        <li>CI/CD Pipelines : AWS CodePipeline, CodeBuild, CodeDeploy, GitHub Actions</li>
+        <li>Infrastructure as Code (IaC): AWS CloudFormation, Terraform</li>
+        <li>Configuration Management: AWS Systems Manager</li>
+        <li>Monitoring & Logging: CloudWatch, AWS X-Ray, AWS Config, GuardDuty</li>
+        <li>Security & Compliance: IAM, AWS Secrets Manager, AWS KMS, AWS Shield, AWS WAF</li>
+        <li>Containers & Orchestration: Docker, Kubernetes (EKS), AWS Fargate</li>
+        <li>Networking: VPC, Route 53, ALB/NLB, AWS PrivateLink</li>
+        <li>Serverless & Automation: AWS Lambda, Step Functions, EventBridge</li>
+        <li>Version Control & Repositories: Git, AWS CodeCommit</li>
+        <li>Incident & Disaster Recovery: AWS Backup, Auto Scaling, Multi-AZ, Route 53 Failover</li>
+       </ul>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <div class="certifications">
+        <img src="aws-devops.jpeg" alt="AWS DevOps Engineer – Professional">
+        <img src="aws-developer.jpeg" alt="AWS Developer – Associate">
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Let's Connect</h2>
+      <a class="contact-btn" href="mailto:akula.anil909@gmail.com">Gmail Me</a>
+      <a class="contact-btn" href="tel:+919951899935">Call Me</a>
+      <a class="contact-btn" href="https://www.linkedin.com/in/anilkumar-akula/" target="_blank">LinkedIn</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Anil Kumar | Portfolio Website</p>
+    </footer>
+  </div>
+
+  <!-- Back to Top -->
+  <div id="backToTop">&#8679;</div>
+
+  <script>
+    // Scroll animation for sections
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('section').forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100) {
+          section.classList.add('visible');
+        }
+      });
+
+      // Back to Top button
+      const btn = document.getElementById('backToTop');
+      if(window.scrollY > 300) btn.style.display = 'block';
+      else btn.style.display = 'none';
+    });
+
+    document.getElementById('backToTop').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
